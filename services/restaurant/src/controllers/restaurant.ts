@@ -53,9 +53,10 @@ export const addRestaurant = TryCatch(async (req: AuthenticatedRequest, res: Res
             buffer: fileBuffer.content,
         });
         uploadResult = response.data;
-    } catch (error) {
+    } catch (error: any) {
+        console.error("Image upload failed in addRestaurant:", error.response?.data || error.message);
         return res.status(500).json({
-            message: "Error uploading image to service.",
+            message: `Error uploading image to service: ${error.response?.data?.message || error.message}`,
         });
     }
 
@@ -189,9 +190,10 @@ export const updateRestaurant = TryCatch(async(req: AuthenticatedRequest, res: R
                     buffer: fileBuffer.content,
                 });
                 updateData.image = response.data.url;
-            } catch (error) {
+            } catch (error: any) {
+                console.error("Image upload failed in updateRestaurant:", error.response?.data || error.message);
                 return res.status(500).json({
-                    message: "Error uploading image to service.",
+                    message: `Error uploading image to service: ${error.response?.data?.message || error.message}`,
                 });
             }
         }
