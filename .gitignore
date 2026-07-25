@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment files (Strictly exclude all .env files)
+.env
+.env*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+**/.env
+**/.env*
+**/.env.local
+
+# Build outputs & logs
+dist/
+**/dist/
+build/
+**/build/
+*.log
+**/*.log
+
+# IDE & System files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
