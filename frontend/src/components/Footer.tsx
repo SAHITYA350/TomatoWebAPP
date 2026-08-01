@@ -128,7 +128,7 @@ const Footer = () => {
                             </a>
 
                             <a
-                                href="https://leetcode.com/u/Balasur/"
+                                href="https://leetcode.com/u/sahityaghosh/"
                                 target="_blank"
                                 rel="noreferrer"
                                 title="LeetCode Profile"
